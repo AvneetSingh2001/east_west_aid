@@ -11,7 +11,7 @@ const cors = require("cors");
 app.use(express.json());
 app.use(cors(
     {
-        origin: ["https://east-west-aid-frontend.vercel.app"],
+        origin: ["https://east-west-aid-frontend.vercel.app", "https://east-west-aid-admin.vercel.app"],
         methods: ["POST", "GET", "PUT"],
         credentials: true
     }
