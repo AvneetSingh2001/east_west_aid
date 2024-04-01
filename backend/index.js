@@ -9,7 +9,13 @@ const path = require("path");
 const cors = require("cors");
 
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+    {
+        origin: ["https://east-west-aid-api.vercel.app/"],
+        methods: ["POST", "GET", "PUT"],
+        credentials: true
+    }
+));
 
 // Database connection with MongoDB
 mongoose.connect(process.env.MONGO_URL);
