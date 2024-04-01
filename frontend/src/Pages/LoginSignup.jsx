@@ -42,7 +42,7 @@ const signup = async () => {
     console.log("Signup", formData);
 
     try {
-        const response = await fetch('http://localhost:4000/signup', {
+        const response = await fetch('https://east-west-aid-api.vercel.app/signup', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
