@@ -1,4 +1,5 @@
-const port = 4000;
+require("dotenv").config();
+const PORT = process.env.PORT || 4000 ;
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -11,7 +12,7 @@ app.use(express.json());
 app.use(cors());
 
 // Database connection with MongoDB
-mongoose.connect("mongodb+srv://sgurminder982:sgurminder982@cluster0.bms91lv.mongodb.net/");
+mongoose.connect(process.env.MONGO_URL);
 
 // API creation
 
@@ -37,7 +38,7 @@ app.post("/upload", upload.single('product'), (req, res)=>{
     console.log("Request file:", req.file);
     res.json({
         success: 1,
-        image_url: `http://localhost:${port}/images/${req.file.filename}`
+        image_url: `http://localhost:${PORT}/images/${req.file.filename}`
     })
 })
 
@@ -56,7 +57,7 @@ const uploadMultipleMiddleware = (req, res, next) => {
         console.log("Files received:", req.files);
         
         // At this point, `req.files` contains an array of related images
-        const imageUrls = req.files.map(file => `http://localhost:${port}/images/${file.filename}`);
+        const imageUrls = req.files.map(file => `http://localhost:${PORT}/images/${file.filename}`);
         req.imageUrls = imageUrls; // Attach imageUrls to the request object
 
         next(); // Move to the next middleware or route handler
@@ -406,9 +407,9 @@ app.post('/getcart', fetchUser, async(req, res) => {
     res.json(userData.cartData);
 })
 
-app.listen(port, (error)=>{
+app.listen(PORT, (error)=>{
     if(!error) {
-        console.log("Server Running on Port " + port);
+        console.log("Server Running on Port " + PORT);
     }
     else {
         console.log("Error : " + error);
