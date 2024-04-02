@@ -38,7 +38,7 @@ const AddProduct = () => {
     let formData = new FormData();
     formData.append('product', image);
 
-    await fetch('https://east-west-aid-api.vercel.app/upload', {
+    await fetch('https://east-west-aid-api.vercel.app/api/v1/upload', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -60,7 +60,7 @@ const AddProduct = () => {
         relatedImagesFormData.append('relatedImages', relatedImage);
       });
 
-      await fetch('https://east-west-aid-api.vercel.app/uploadMultiple', {
+      await fetch('https://east-west-aid-api.vercel.app/api/v1/uploadMultiple', {
         method: 'POST',
         headers: {
           Accept: 'application/json',
@@ -74,7 +74,7 @@ const AddProduct = () => {
 
       console.log(product);
 
-      await fetch('https://east-west-aid-api.vercel.app/addproduct', {
+      await fetch('https://east-west-aid-api.vercel.app/api/v1/addproduct', {
         method: 'POST',
         headers: {
           Accept: 'application/json',

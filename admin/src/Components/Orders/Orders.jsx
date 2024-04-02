@@ -11,7 +11,7 @@ const Orders = () => {
 
   const fetchOrders = async () => {
     try {
-      const response = await fetch('https://east-west-aid-api.vercel.app/allorders');
+      const response = await fetch('https://east-west-aid-api.vercel.app/api/v1/allorders');
       const ordersData = await response.json();
   
       if (response.ok) {
@@ -19,7 +19,7 @@ const Orders = () => {
           await Promise.all(
             ordersData.map(async (order) => {
               const userId = order.currentUser;
-              const userResponse = await fetch(`https://east-west-aid-api.vercel.app/${userId}`);
+              const userResponse = await fetch(`https://east-west-aid-api.vercel.app/api/v1/${userId}`);
               const userData = await userResponse.json();
   
               return {
