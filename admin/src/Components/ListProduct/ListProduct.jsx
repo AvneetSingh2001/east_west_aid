@@ -7,7 +7,7 @@ const ListProduct = () => {
     const [allproducts, setAllProducts] = useState([]);
 
     const fetchInfo = async () => {
-        await fetch('https://east-west-aid-api.vercel.app/api/v1/allproducts')
+        await fetch('https://east-west-aid-api.vercel.app/allproducts')
         .then((res)=>res.json())
         .then((data)=>{setAllProducts(data)});
     }
@@ -17,7 +17,7 @@ const ListProduct = () => {
     },[])
 
     const remove_product = async(id) => {
-        await fetch('https://east-west-aid-api.vercel.app/api/v1/removeproduct', {
+        await fetch('https://east-west-aid-api.vercel.app/removeproduct', {
             method: 'POST',
             headers: {
                 Accept: 'application/json',

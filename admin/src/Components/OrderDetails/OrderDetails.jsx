@@ -11,7 +11,7 @@ const OrderDetails = () => {
   const fetchProductDetails = async (order) => {
     try {
       // Fetch all products from the server
-      const response = await fetch(`https://east-west-aid-api.vercel.app/api/v1/allproducts`);
+      const response = await fetch(`https://east-west-aid-api.vercel.app/allproducts`);
       const allProductsData = await response.json();
 
       if (!response.ok) {
@@ -63,7 +63,7 @@ const OrderDetails = () => {
 
   const fetchUserDetails = async (userId) => {
     try {
-      const response = await fetch(`https://east-west-aid-api.vercel.app/api/v1/user/${userId}`);
+      const response = await fetch(`https://east-west-aid-api.vercel.app/user/${userId}`);
       const userResponse = await response.json();
 
       if (response.ok) {
@@ -79,7 +79,7 @@ const OrderDetails = () => {
   useEffect(() => {
     const fetchOrderDetails = async () => {
       try {
-        const response = await fetch(`https://east-west-aid-api.vercel.app/api/v1/allorders`);
+        const response = await fetch(`https://east-west-aid-api.vercel.app/allorders`);
         const ordersData = await response.json();
 
         if (response.ok) {
