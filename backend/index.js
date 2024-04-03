@@ -9,19 +9,11 @@ const path = require("path");
 const cors = require("cors");
 
 app.use(express.json());
-app.use(cors(
-    {
-        origin: ["https://east-west-aid-frontend.vercel.app", "https://east-west-aid-admin.vercel.app"],
-        methods: ["POST", "GET"],
-        credentials: true
-    }
-));
 
 // Database connection with MongoDB
 mongoose.connect(process.env.MONGO_URL);
 
 // API creation
-
 app.get("/",(req, res)=>{
     res.send("Express App is running")
 })
@@ -42,9 +34,10 @@ app.use(`/images`, express.static('upload/images'))
 app.post("/upload", upload.single('product'), (req, res)=>{
     console.log("Inside /upload endpoint");
     console.log("Request file:", req.file);
+    const baseUrl = `${req.protocol}://${req.get('host')}`;
     res.json({
         success: 1,
-        image_url: `http://localhost:${PORT}/images/${req.file.filename}`
+        image_url: `${baseUrl}/images/${req.file.filename}`
     })
 })
 
@@ -61,9 +54,10 @@ const uploadMultipleMiddleware = (req, res, next) => {
         }
 
         console.log("Files received:", req.files);
-        
+        const baseUrl = `${req.protocol}://${req.get('host')}`;
+ 
         // At this point, `req.files` contains an array of related images
-        const imageUrls = req.files.map(file => `http://localhost:${PORT}/images/${file.filename}`);
+        const imageUrls = req.files.map(file => `${baseUrl}/images/${req.file.filename}`);
         req.imageUrls = imageUrls; // Attach imageUrls to the request object
 
         next(); // Move to the next middleware or route handler
