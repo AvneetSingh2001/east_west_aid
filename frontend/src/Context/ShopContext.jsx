@@ -16,14 +16,14 @@ const ShopContextProvider = (props)=>{
     const [cartItems,setCartItems] = useState(getDefaultCart());
     
     useEffect(() => {
-        fetch('https://east-west-aid-api.vercel.app/allproducts')
+        fetch('https://east-west-aid.onrender.com/allproducts')
             .then((response) => response.json())
             .then((data) => {
                 setAll_Product(data);
             });
     
         if (localStorage.getItem('auth-token')) {
-            fetch('https://east-west-aid-api.vercel.app/getcart', {
+            fetch('https://east-west-aid.onrender.com/getcart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -41,7 +41,7 @@ const ShopContextProvider = (props)=>{
     const addToCart = (itemId) => {
         setCartItems((prev)=>({...prev, [itemId]:prev[itemId]+1}))
         if(localStorage.getItem('auth-token')) {
-            fetch('https://east-west-aid-api.vercel.app/addtocart', {
+            fetch('https://east-west-aid.onrender.com/addtocart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -58,7 +58,7 @@ const ShopContextProvider = (props)=>{
     const removeFromCart = (itemId) => {
         setCartItems((prev)=>({...prev, [itemId]:prev[itemId]-1}));
         if(localStorage.getItem('auth-token')) {
-            fetch('https://east-west-aid-api.vercel.app/removefromcart', {
+            fetch('https://east-west-aid.onrender.com/removefromcart', {
                 method: 'POST',
                 headers: {
                     Accept: 'application/form-data',
@@ -75,7 +75,7 @@ const ShopContextProvider = (props)=>{
     const emptyCart = async () => {
         setCartItems(getDefaultCart());
         try {
-            const response = await fetch('https://east-west-aid-api.vercel.app/emptycart', {
+            const response = await fetch('https://east-west-aid.onrender.com/emptycart', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

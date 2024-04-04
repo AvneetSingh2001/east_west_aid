@@ -16,7 +16,7 @@ const CartItems = () => {
   
       if (token && userAddress && totalCartAmount > 0) {
         // Send a request to your server to store the order details
-        const response = await fetch('https://east-west-aid-api.vercel.app/placeorder', {
+        const response = await fetch('https://east-west-aid.onrender.com/placeorder', {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -55,7 +55,7 @@ const CartItems = () => {
       const token = localStorage.getItem('auth-token');
 
       if (token) {
-        const response = await fetch('https://east-west-aid-api.vercel.app/currentuser', {
+        const response = await fetch('https://east-west-aid.onrender.com/currentuser', {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,

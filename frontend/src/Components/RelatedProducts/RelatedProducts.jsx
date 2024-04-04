@@ -9,7 +9,7 @@ const RelatedProducts = () => {
   const [related_products, setRelatedProducts] = useState([]);
 
   useEffect(() => {
-    fetch('https://east-west-aid-api.vercel.app/newcollections')
+    fetch('https://east-west-aid.onrender.com/newcollections')
       .then((response) => response.json())
       .then((data) => {
         setRelatedProducts(data);

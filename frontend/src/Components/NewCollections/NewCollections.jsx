@@ -7,7 +7,7 @@ const NewCollections = () => {
   const [new_collection, setNew_collection] = useState([]);
 
   useEffect(() => {
-    fetch('https://east-west-aid-api.vercel.app/newcollections')
+    fetch('https://east-west-aid.onrender.com/newcollections')
         .then((response) => response.json())
         .then((data) => {
             setNew_collection(data);

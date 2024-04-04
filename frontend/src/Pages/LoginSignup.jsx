@@ -16,7 +16,7 @@ const LoginSignup = () => {
     console.log("Login", formData);
 
     try {
-        const response = await fetch('https://east-west-aid-api.vercel.app/login', {
+        const response = await fetch('https://east-west-aid.onrender.com/login', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
@@ -42,7 +42,7 @@ const signup = async () => {
     console.log("Signup", formData);
 
     try {
-        const response = await fetch('https://east-west-aid-api.vercel.app/signup', {
+        const response = await fetch('https://east-west-aid.onrender.com/signup', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',

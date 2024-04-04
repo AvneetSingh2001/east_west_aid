@@ -7,7 +7,7 @@ const Popular = () => {
   const [popularProducts, setPopularProducts] = useState([]);
 
   useEffect(() => {
-    fetch('https://east-west-aid-api.vercel.app/appliances')
+    fetch('https://east-west-aid.onrender.com/appliances')
         .then((response) => response.json())
         .then((data) => {
             setPopularProducts(data);

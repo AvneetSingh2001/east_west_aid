@@ -15,7 +15,7 @@ const Profile = () => {
       const token = localStorage.getItem('auth-token');
 
       if (token) {
-        const response = await fetch('https://east-west-aid-api.vercel.app/currentuser', {
+        const response = await fetch('https://east-west-aid.onrender.com/currentuser', {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,
@@ -52,7 +52,7 @@ const Profile = () => {
       console.log(updatedUser);
 
       if (token) {
-        const response = await fetch('https://east-west-aid-api.vercel.app/updateuser', {
+        const response = await fetch('https://east-west-aid.onrender.com/updateuser', {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${token}`,
