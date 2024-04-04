@@ -38,7 +38,7 @@ app.post("/upload", upload.single('product'), (req, res)=>{
     console.log("Request file:", req.file);
     res.json({
         success: 1,
-        image_url: `https://east-west-aid.onrender.com:${PORT}/images/${req.file.filename}`
+        image_url: `https://east-west-aid.onrender.com/images/${req.file.filename}`
     })
 })
 
@@ -57,7 +57,7 @@ const uploadMultipleMiddleware = (req, res, next) => {
         console.log("Files received:", req.files);
         
         // At this point, `req.files` contains an array of related images
-        const imageUrls = req.files.map(file => `https://east-west-aid.onrender.com:${PORT}/images/${file.filename}`);
+        const imageUrls = req.files.map(file => `https://east-west-aid.onrender.com/images/${req.file.filename}`);
         req.imageUrls = imageUrls; // Attach imageUrls to the request object
 
         next(); // Move to the next middleware or route handler
