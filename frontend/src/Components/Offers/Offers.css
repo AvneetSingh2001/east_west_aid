@@ -105,36 +105,13 @@
 
 @media(max-width:800px){
     .offers{
-        padding: 0px 0px 0px 70px !important;
-        margin-bottom: 60px;
-        width: 65%;
-    }
-    .offers-left h1{
-        font-size: 22px;
-    }
-    .offers-left p{
-        font-size: 13px;
-    }
-    .offers-right img{
-        height: 100%;
-        width: 100%;
-    }
-    .offers-left button{
-        width: 140px;
-        height: 30px;
-        font-size: 12px;
-    }
-}
-
-@media(max-width:500px){
-    .offers{
-        padding: 0px 0px 0px 40px !important;
+        padding: 0px 0px 0px 60px !important;
         height: 25vh;
-        margin-bottom: 50px;
-        width: 50%;
+        margin-bottom: 40px;
+        width: 75%;
     }
     .offers-left h1{
-        font-size: 16px;
+        font-size: 20px;
     }
     .offers-left p{
         font-size: 10px;
@@ -142,11 +119,5 @@
     .offers-right img{
         height: 100%;
         width: 100%;
-    }
-    .offers-left button{
-        width: 120px;
-        height: 25px;
-        font-size: 10px;
-        margin-top: 12px;
     }
 }

@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className="nav-logo" onClick={() => { setMenu("shop") }}>
           <p> <span className='east-logo-text'>EAST</span></p>
           <img className='footer-logo-first' src={footer_logo_1_icon} alt="" />
-          <p> <span className='west-logo-text'>WEST</span> AID</p>
+          <p className='west-logo-text-parent'> <span className='west-logo-text'>WEST</span> AID</p>
           <img className='footer-logo-second' src={footer_logo_2_icon} alt="" />
         </div>
         <div className="nav-admin">
