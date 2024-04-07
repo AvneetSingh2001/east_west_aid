@@ -43,9 +43,18 @@
         padding: 15px 30px;
     }
     .nav-logo{
-        width: 150px;
+        width: 250px;
     }
-    .nav-profile{
-        width: 60px;
+    .east-logo-text{
+        font-size: small;
+    }
+    .west-logo-text{
+        font-size: small;
+    }
+    .nav-logo p{
+        font-size: small;
+    }
+    .nav-admin {
+        padding-left: 15px;
     }
 }

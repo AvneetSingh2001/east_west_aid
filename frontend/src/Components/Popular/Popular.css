@@ -89,17 +89,25 @@
     .popular hr {
       width: 30%;
     }
+    .popular-item {
+      grid-template-columns: 1fr;
+    }
+    .popular-item img {
+      width: 250px !important;
+      margin-left: -45px;
+    }
   }
   
   @media(max-width:500px){
     .popular{
       height: auto;
     }
-    .popular-item img {
-      max-width: 100%;
+    .popular-item {
+      grid-template-columns: 1fr;
     }
-    .popular-item{
-      grid-template-columns: 1fr 1fr;
+    .popular-item img {
+      width: 250px !important;
+      margin-left: -45px;
     }
   }
   
